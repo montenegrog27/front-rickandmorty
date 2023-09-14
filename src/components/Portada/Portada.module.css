@@ -1,0 +1,9 @@
+.portada {
+  background-image: url("../../assets/logo.png");
+  background-repeat: no-repeat;
+  background-position: center 10px;
+  background-size: contain;
+  background-color: rgba(255, 0, 0, 0);
+  width: 170px;
+  height: 100px;
+}
