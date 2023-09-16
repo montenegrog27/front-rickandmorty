@@ -20,7 +20,7 @@ function App() {
 
   async function searchHandler(id) {
     const numberID = Number(id);
-    if (numberID > 824 || numberID < 1) {
+    if (isNaN(numberID) || numberID > 824 || numberID < 1) {
       alert("Debe buscar un numero del 1 al 824");
     } else {
       try {
