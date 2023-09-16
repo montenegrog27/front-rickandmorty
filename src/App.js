@@ -21,22 +21,22 @@ function App() {
   async function searchHandler(id) {
     if (!Number(id) || id > 815 || id < 1) {
       alert("Debe buscar un numero del 1 al 810");
-    }
+    } else {
+      try {
+        let found1 = characters.find((c) => c.id === Number(id));
 
-    try {
-      let found1 = characters.find((c) => c.id === Number(id));
+        if (!found1) {
+          const response = (await axios.get(` ${URL}character/${id}`)).data;
 
-      if (!found1) {
-        const response = (await axios.get(` ${URL}character/${id}`)).data;
-
-        if (response.name) {
-          setCharacters((oldChars) => [response, ...oldChars]);
+          if (response.name) {
+            setCharacters((oldChars) => [response, ...oldChars]);
+          }
+        } else {
+          window.alert("No hay personajes con ese ID");
         }
-      } else {
-        window.alert("No hay personajes con ese ID");
+      } catch (error) {
+        alert(error.message);
       }
-    } catch (error) {
-      alert(error.message);
     }
   }
 
