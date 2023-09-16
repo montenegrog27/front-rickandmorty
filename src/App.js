@@ -19,7 +19,8 @@ function App() {
   const [characters, setCharacters] = useState([]);
 
   async function searchHandler(id) {
-    if (!Number(id) || id > 824 || id < 1) {
+    const numberID = Number(id);
+    if (numberID > 824 || numberID < 1) {
       alert("Debe buscar un numero del 1 al 824");
     } else {
       try {
