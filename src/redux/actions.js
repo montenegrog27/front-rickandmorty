@@ -2,8 +2,10 @@ import axios from "axios";
 const ADD_FAVORITES = "ADD_FAVORITES";
 const DELETE_FAVORITES = "DELETE_FAVORITES";
 
+const URL = "https://api-aws-rickandmorty-production.up.railway.app/";
+
 export const addFavorites = (character) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav";
+  const endpoint = `${URL}/fav`;
   return async (dispatch) => {
     try {
       const response = (await axios.post(endpoint, character)).data;
@@ -18,7 +20,7 @@ export const addFavorites = (character) => {
 };
 
 export const deleteFavorites = (id) => {
-  const endpoint = "http://localhost:3001/rickandmorty/fav/" + id;
+  const endpoint = `${URL}/fav/${id}`;
   return async (dispatch) => {
     try {
       const response = (await axios.delete(endpoint)).data;

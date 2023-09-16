@@ -22,9 +22,7 @@ function App() {
     try {
       let found1 = characters.find((c) => c.id === Number(id));
       if (!found1) {
-        const response = (
-          await axios.get(`http://localhost:3001/rickandmorty/character/${id}`)
-        ).data;
+        const response = (await axios.get(` ${URL}/character/${id}`)).data;
 
         if (response.name) {
           setCharacters((oldChars) => [response, ...oldChars]);
