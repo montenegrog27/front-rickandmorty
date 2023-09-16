@@ -83,7 +83,7 @@ function Card(props) {
         <img
           src={character.image}
           alt=""
-          className="rounded-xl max-w-[150px]"
+          className="rounded-xl md:max-w-[150px]"
         />
 
         <div className="text-x-small text-center text-decoration-none">

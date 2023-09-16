@@ -2,16 +2,14 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import NavBar from "../components/NavBar/NavBar";
+const URL = "https://api-aws-rickandmorty-production.up.railway.app/";
 
 function Detail() {
   const [character, setCharacter] = useState([]);
 
-  // const { id } = useParams(); // este numero viene en forma de string
   const params = useParams();
-  console.log(params.id);
   useEffect(() => {
-    fetch(`http://localhost:3001/rickandmorty/character/${params.id}`)
-      // fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    fetch(` ${URL}character/${params.id}`)
       .then((response) => response.json())
       .then((char) => {
         if (char.name) {
@@ -28,17 +26,9 @@ function Detail() {
 
   return (
     <>
-      {/* <div className={style.nav}>
-        <Link to="/home" className={style.home}>
-          Home
-        </Link>
-        <Link to="/about" className={style.about}>
-          About
-        </Link>
-      </div> */}
       <NavBar />
-      <div className="  flex justify-center w-full    shadow-md">
-        <div className="flex flex-col bg-gradient-to-r rounded-lg items-center w-[600px] from-green-300 via-green-500 to-green-600 p-8">
+      <div className="  flex justify-center w-full mx-1 mt-10  shadow-md">
+        <div className="flex flex-col bg-gradient-to-r rounded-lg items-center md:w-[600px] from-green-300 via-green-500 to-green-600 p-8">
           <img
             src={character.image}
             alt={character.name}

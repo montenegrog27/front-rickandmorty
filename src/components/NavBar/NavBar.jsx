@@ -15,31 +15,31 @@ function NavBar(props) {
     <>
       <div className="grid grid-cols-1 ">
         <div className=" top-0 justify-around w-full  grid grid-cols-2">
-          <div className="">
+          <div className="hidden md:block">
             <Portada />
           </div>
           <div className="flex space-x-4 p-2">
             <Link
               to="/home"
-              className="bg-green-500 rounded-lg h-10 w-[80px] text-center p-1 text-white text-lg font-semibold hover:bg-green-600"
+              className="bg-green-500 rounded-lg h-10 w-[80px] text-center p-1 text-white md:text-lg font-semibold hover:bg-green-600"
             >
               Home
             </Link>
             <Link
               to="/favorites"
-              className="bg-green-500 rounded-lg h-10 w-[80px] text-center p-1 text-white text-lg font-semibold hover:bg-green-600"
+              className="bg-green-500 rounded-lg h-10 w-[80px] text-center py-1 px-5  text-white md:text-lg font-semibold hover:bg-green-600"
             >
               Fav
             </Link>
             <Link
               to="/about"
-              className="bg-green-500 rounded-lg h-10 w-[80px] text-center p-1 text-white text-lg font-semibold hover:bg-green-600"
+              className="bg-green-500 rounded-lg h-10 w-[80px] text-center p-1 text-white md:text-lg font-semibold hover:bg-green-600"
             >
               About
             </Link>
             <Link
               to="/"
-              className="bg-green-500 rounded-lg h-10 w-[80px] text-center p-1 text-white text-lg font-semibold hover:bg-green-600"
+              className="bg-green-500 rounded-lg h-10 w-[80px] text-center p-1 text-white md:text-lg font-semibold hover:bg-green-600"
               onClick={handleSignOut}
             >
               Logout
