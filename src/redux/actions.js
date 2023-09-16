@@ -5,7 +5,7 @@ const DELETE_FAVORITES = "DELETE_FAVORITES";
 const URL = "https://api-aws-rickandmorty-production.up.railway.app/";
 
 export const addFavorites = (character) => {
-  const endpoint = `${URL}/fav`;
+  const endpoint = `${URL}fav`;
   return async (dispatch) => {
     try {
       const response = (await axios.post(endpoint, character)).data;
@@ -20,7 +20,7 @@ export const addFavorites = (character) => {
 };
 
 export const deleteFavorites = (id) => {
-  const endpoint = `${URL}/fav/${id}`;
+  const endpoint = `${URL}fav/${id}`;
   return async (dispatch) => {
     try {
       const response = (await axios.delete(endpoint)).data;
