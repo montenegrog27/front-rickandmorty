@@ -21,6 +21,9 @@ function App() {
   async function searchHandler(id) {
     try {
       let found1 = characters.find((c) => c.id === Number(id));
+      if (!Number(found1)) {
+        alert("debe buscar por numero del 1 al 600");
+      }
       if (!found1) {
         const response = (await axios.get(` ${URL}character/${id}`)).data;
 

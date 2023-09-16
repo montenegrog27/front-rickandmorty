@@ -23,15 +23,6 @@ const awsmobile = {
     redirectSignOut:
       "https://front-rickandmorty-keohjayac-montenegrog27.vercel.app/",
     responseType: "code",
-    onAuthCreateAccount: async (authState, data) => {
-      try {
-        // Realiza la solicitud POST a la ruta deseada
-        alert("hola");
-      } catch (error) {
-        alert("hola hola");
-        console.error("Error:", error);
-      }
-    },
   },
   federationTarget: "COGNITO_USER_POOLS",
   aws_cognito_username_attributes: ["EMAIL"],
