@@ -14,7 +14,7 @@ import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
-
+const URL = "https://api-aws-rickandmorty-production.up.railway.app/";
 function App() {
   const [characters, setCharacters] = useState([]);
 
@@ -22,7 +22,7 @@ function App() {
     try {
       let found1 = characters.find((c) => c.id === Number(id));
       if (!found1) {
-        const response = (await axios.get(` ${URL}/character/${id}`)).data;
+        const response = (await axios.get(` ${URL}character/${id}`)).data;
 
         if (response.name) {
           setCharacters((oldChars) => [response, ...oldChars]);
